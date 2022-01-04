@@ -5,9 +5,9 @@ const siteMetadata = {
   description: "Abhinav Pandey's Blog",
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://www.abhinavpandey.dev',
   siteRepo: 'https://github.com/abh1navv/pw-blog',
-  siteLogo: '/static/images/logo.png',
+  siteLogo: '/static/images/a-logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'abhinavpandey312@gmail.com  ',

@@ -7,7 +7,7 @@ export default async (req, res) => {
 
   try {
     const API_KEY = process.env.REVUE_API_KEY
-    const revueRoute = `${process.env.REVUE_API_URL}subscribers`
+    const revueRoute = `${process.env.REVUE_API_URL}`
     const response = await fetch(revueRoute, {
       body: JSON.stringify({
         email,

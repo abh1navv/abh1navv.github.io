@@ -2,6 +2,15 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/abh1navv/pw-blog.git)
 
+## What I added
+
+1. Revue Newsletter integration.
+2. My own logo
+3. My own social banner
+4. My own blogs and content
+
+## What was already there
+
 This is a [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) blogging starter template. Probably the most feature-rich Next.js markdown blogging template out there. Comes out of the box configured with the latest technologies to make technical writing a breeze. Easily configurable and customizable. Perfect as a replacement to existing Jekyll and Hugo individual blogs.
 
 Check out the documentation below to get started.

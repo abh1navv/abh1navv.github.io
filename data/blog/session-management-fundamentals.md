@@ -111,6 +111,12 @@ Let's compare these three attributes for each of the three storage types.
     - fault tolerance: If the Redis server goes down, all sessions are lost and cannot be recovered. Nor can new sessions be created during the downtime. **Fairly unacceptable**
     - scalability: It allows the application servers to scale as needed. However, as the user activity increases, Redis will require scaling of its own infrastructure. This is completely normal in web applications. **Fairly acceptable**
 
+|Storage Type|Request Throughput|Fault Tolerance|Scalability|
+|------------|----------------------|-------------------|-----------------|
+|In-memory storage|Good ✅ |Unacceptable 🟠|Bad ❌|
+|Databases|Bad ❌|Acceptable🟡|Good ✅|
+|Redis|Acceptable🟡|Unacceptable 🟠|Acceptable 🟡|
+
 ### Value Tokens
 These are tokens that hold the user's identity and their permissions. They are stored on the client side.
 - They can be encrypted or encoded strings.

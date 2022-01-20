@@ -1,4 +1,14 @@
-# Session Management
+---
+title: 'Session Management Fundamentals'
+date: '2022-01-20'
+tags: ['security', 'JWT', 'authorization']
+draft: false
+summary: 'Fundamentals of session management'
+---
+
+# Session Management Fundamentals
+
+![Session Management fundamentals banner](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/48hjbvmnlcx5o8lezct1.png)
 
 <details>
   <summary>Table of Contents</summary>
@@ -20,7 +30,7 @@
 </details>
 
 
-## Session Management
+## Introduction
 Session management is the process of maintaining a session _"between a client and a server", "for a user", "for a period of time"_.
 
 ### A simple session management flow
@@ -39,7 +49,7 @@ Let's look at the highlighted terms of the session management process.
 - an important point to note in context of web applications is that authentication always involves a user interaction, be it just a click of a button.
 - authentication can be done in multiple ways - email+password, social sign-in, MFA, etc. In all cases, the authentication flow can be summarised by the below diagram.
 
-![Authentication Flow](diagrams/authentication.png)
+![Authentication Flow](/public/static/images/authentication.png)
 
 #### The need for authorization
 - Every user has a set of permissions. These permissions are granted to the user by the server. For example, I can like any post, but I can only delete my own posts or edit my own profile.
@@ -73,7 +83,7 @@ These are tokens that are used to identify the user and their permissions but do
     - checking that the token is not expired.
     - if all is well till here, the server checks the permissions of the user against what is requested in the request.
 
-![Authorization with reference tokens](diagrams/refrence-token-authorization.png)
+![Authorization with reference tokens](/public/static/images/refrence-token-authorization.png)
 
 #### Considerations when using Reference Tokens
 
@@ -115,7 +125,7 @@ These are tokens that hold the user's identity and their permissions. They are s
     - checking that the token is not expired using the expiry time in the token content.
     - If all is well till here, the server checks the permissions of the user against what is requested. This permission information is part of the token content itself so no database queries are required.
 
-![Authorization user value tokens](diagrams/value-token-authorization.png)
+![Authorization user value tokens](/public/static/images/value-token-authorization.png)
 
 To understand this deeper let's talk about an exact implementation of value tokens - Json Web Tokens (JWT).
 

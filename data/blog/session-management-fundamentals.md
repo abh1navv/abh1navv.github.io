@@ -131,7 +131,10 @@ To understand this deeper let's talk about an exact implementation of value toke
 
 #### JWT Structure
 Example JWT:
+
+<div style="word-wrap: break">
 _eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9_.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.**TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ**
+</div>
 
 1. Italic part - **header** - JSON object that contains the algorithm and type of token. Base64URL encoded.
 2. Middle part - **payload** - JSON object that contains the user's information, permissions and expiry time. Base64url encoded.
@@ -139,6 +142,10 @@ _eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9_.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ikpva
 
 Signature is created using the algorithm used in the header. The server uses a secret key to sign the payload and header.
 Only the server knows the key required to create or understand the signature.
+
+If you decode the same JWT on [jwt.io](jwt.io), you can see what's inside. 
+![Decoded JWT](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1d0nsomt4qa2y7v6w5mm.png)
+
 
 **Signature creation**
 Signature = Algorithm((header+payload)*secretKey)

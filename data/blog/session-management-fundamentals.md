@@ -45,11 +45,12 @@ The process can be described as follows:
 Let's look at the highlighted terms of the session management process.
 
 #### The need for authentication
-- to know **who the user is**. In deeper terms, to associate the actions of the user with their identity. If I open the Twitter website and hit like on a post, Twitter should be able to associate that like with my identity.
-- an important point to note in context of web applications is that authentication always involves a user interaction, be it just a click of a button.
-- authentication can be done in multiple ways - email+password, social sign-in, MFA, etc. In all cases, the authentication flow can be summarised by the below diagram.
 
 ![Authentication Flow](/static/images/authentication.png)
+
+- to know **who the user is**. In deeper terms, to associate the actions of the user with their identity. If I open the Twitter website and hit like on a post, Twitter should be able to associate that like with my identity.
+- an important point to note in context of web applications is that authentication always involves a user interaction, be it just a click of a button.
+
 
 #### The need for authorization
 - Every user has a set of permissions. These permissions are granted to the user by the server. For example, I can like any post, but I can only delete my own posts or edit my own profile.
@@ -76,14 +77,15 @@ These are tokens that are used to identify the user and their permissions but do
 - It points to the user's identity and permissions in a storage. The storage can be a database, a distributed cache like Redis or in memory objects of the server.
 
 #### Authorization flow
-- The client sends a request to the server - the access token is sent as a header.
-- The server verifies the access token's validity by querying the storage for it.
-- Checking the validity involves
+![Authorization with reference tokens](/static/images/refrence-token-authorization.png)
+
+1. The client sends a request to the server - the access token is sent as a header.
+2. The server verifies the access token's validity by querying the storage for it. The storage returns the permissions against that token.
+3. Checking the validity involves
     - checking that the token exists in the storage
     - checking that the token is not expired.
     - if all is well till here, the server checks the permissions of the user against what is requested in the request.
-
-![Authorization with reference tokens](/static/images/refrence-token-authorization.png)
+4. The server returns the response to the client
 
 #### Considerations when using Reference Tokens
 
@@ -118,14 +120,14 @@ These are tokens that hold the user's identity and their permissions. They are s
 
 #### Authorization flow
 
-- The client sends a request to the server - the access token is sent as a header.
-- The server verifies the access token's validity by reading its content.
-- Checking the validity involves
+![Authorization user value tokens](/static/images/value-token-authorization.png)
+
+1. The client sends a request to the server - the access token is sent as a header. The server verifies the access token's validity by reading its content. Checking the validity involves:
     - decrypting/decoding the token's content.
     - checking that the token is not expired using the expiry time in the token content.
     - If all is well till here, the server checks the permissions of the user against what is requested. This permission information is part of the token content itself so no database queries are required.
+2. The server returns the response to the client.
 
-![Authorization user value tokens](/static/images/value-token-authorization.png)
 
 To understand this deeper let's talk about an exact implementation of value tokens - Json Web Tokens (JWT).
 

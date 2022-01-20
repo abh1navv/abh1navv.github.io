@@ -140,9 +140,9 @@ To understand this deeper let's talk about an exact implementation of value toke
 #### JWT Structure
 Example JWT:
 
-<div style="word-wrap: break">
-_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9_.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.**TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ**
-</div>
+_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9_.
+eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.
+**TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ**
 
 1. Italic part - **header** - JSON object that contains the algorithm and type of token. Base64URL encoded.
 2. Middle part - **payload** - JSON object that contains the user's information, permissions and expiry time. Base64url encoded.

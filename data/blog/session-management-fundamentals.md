@@ -13,7 +13,7 @@ summary: 'Fundamentals of session management'
 <details>
   <summary>Table of Contents</summary>
 
-1. [Session Management](#session-management)
+1. [Introduction](#introduction)
     - [A simple session management flow](#a-simple-session-management-flow)
         - [The need for authentication](#the-need-for-authentication)
         - [The need for authorization](#the-need-for-authorization)

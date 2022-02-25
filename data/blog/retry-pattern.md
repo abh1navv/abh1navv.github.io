@@ -13,12 +13,15 @@ In a microservices architecture, the retry pattern is a common pattern for recov
 Some examples of these errors are:
 
 **Network failure** 
+
 An application lost connectivity for a short period of time.
 
 **Component failure** 
+
 A component is unavailable for a short period of time. This usually happens during maintenance or automatic recovery from a crash.
 
 **Component overload** 
+
 A component is overloaded and cannot accept new requests for a short period of time. This could also be due to a throttling or rate-limiting implementation.
 
 As you can see, **the above errors are self-healing**. In this case, it makes sense for the client to retry the request (immediately or after a delay) rather than logging the error and aborting the request.

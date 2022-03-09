@@ -3,7 +3,7 @@ title: '12 Common uses of Java Streams'
 date: '2022-03-09'
 tags: ['java']
 draft: false
-summary: '112 Common uses of Java Streams with code examples'
+summary: '12 Common uses of Java Streams with code examples'
 
 ---
 

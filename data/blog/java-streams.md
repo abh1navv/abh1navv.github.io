@@ -1,10 +1,10 @@
-
 ---
 title: '12 Common uses of Java Streams'
 date: '2022-03-09'
 tags: ['java']
 draft: false
 summary: '112 Common uses of Java Streams with code examples'
+
 ---
 
 Java Streams API was introduced in Java 8. Its aim is to provide a less verbose and concise way to carry out common operations on collections of objects.

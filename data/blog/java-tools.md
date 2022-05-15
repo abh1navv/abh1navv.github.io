@@ -10,6 +10,8 @@ Once you have enough grasp of Core Java, it is important to go beyond the basics
 
 Here is a list of tools that will help you on your path as a Java developer.
 
+<TOCInline toc={props.toc} asDisclosure='true'/>
+
 ### Unit testing
 
 Unit testing is a widely adopted practice and is a must-have skill for Java developers

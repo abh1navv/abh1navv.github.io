@@ -12,10 +12,7 @@ images: '/static/images/article-images/java-records.jpg'
 In this tutorial, we will cover the basics of how to use records in Java.
 Records were introduced in Java 14 as a way to remove boilerplate code around the creation of value objects while incorporating the benefits of immutable objects.
 
-<details>
-  <summary><b>Table of Contents</b></summary>
-  <TOCInline toc={props.toc} />
-</details>
+<TOCInline toc={props.toc} asDisclosure='true'/>
 
 ## 1. Basic Concepts
 

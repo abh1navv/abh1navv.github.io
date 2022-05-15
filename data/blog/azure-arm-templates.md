@@ -6,11 +6,8 @@ draft: false
 summary: 'Learn how to use ARM templates to perform consistent resource deployments on Azure'
 ---
 
-While working in a cloud based environment, we are rapidly creating and deploying new resources. Azure provides few different ways to deploy new resources. Let's have a quick look:
-
-1. **Portal** - GUI based. Select the type of resource and set its properties. Azure will validate the settings provided by you and deploy the resource.
-2. **Azure CLI(Bash)/Powershell/Cloudshell** - Create resources using command line interface. Settings are provided as options while running commands. Can perform the same tasks as portal and some additional tasks like running powershell or bash scripts after resources are created. Scripts can also be used to group multiple tasks which should be performed together.
-3. **Azure Resource Manager** - Uses a template that contains the same information as we were providing in other tools. Main advantage over other tools is that the template can be shared across the team and can serve as the single source of truth regarding resource configurations. No developer or admin needs to remember the configurations to be used.
+While working in a cloud-based environment, we are rapidly creating and deploying new resources. Azure provides few different ways to deploy new resources. Let's have a quick look:
+**Portal** - GUI-based. Select the type of resource and set its properties. Azure will validate the settings provided by you and deploy the resource. 2. **Azure CLI(Bash)/Powershell/Cloudshell** - Create resources using a command-line interface. Settings are provided as options while running commands. Can perform the same tasks as portal and some additional tasks like running powershell or bash scripts after resources are created. Scripts can also be used to group multiple tasks which should be performed together. 3. **Azure Resource Manager** - Uses a template that contains the same information as we were providing in other tools. Main advantage over other tools is that the template can be shared across the team and can serve as the single source of truth regarding resource configurations. No developer or admin needs to remember the configurations to be used.
 
 ![](https://res.cloudinary.com/practicaldev/image/fetch/s--lSDx_4mt--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i1ldab6lmtm0fv63l1a9.png)
 

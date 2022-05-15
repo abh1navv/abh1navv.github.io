@@ -12,6 +12,11 @@ images: '/static/images/article-images/java-records.jpg'
 In this tutorial, we will cover the basics of how to use records in Java.
 Records were introduced in Java 14 as a way to remove boilerplate code around the creation of value objects while incorporating the benefits of immutable objects.
 
+<details>
+  <summary><b>Table of Contents</b></summary>
+  <TOCInline toc={props.toc} />
+</details>
+
 ## 1. Basic Concepts
 
 Before moving on to Records, let's look at the problem Records solve. To understand this, let's examine how value objects were created before Java 14.
@@ -128,13 +133,29 @@ Contact contact = new Contact("John Doe", "johnrocks@gmail.com");
 ```
 
 ### 2.2. Default Behaviour
+
 We have reduced the code to a single line. Let's list down what this includes:
 
 1. The _name_ and _email_ fields are private and final by default.
-2. It defines a constructor which takes the fields as parameters.
+2. It defines a "canonical constructor" which takes the fields as parameters.
 3. The fields are accessible via getter-like methods - `name()` and `email()`. There is no setter for the fields so the data in the object becomes immutable.
 4. A `toString` method is implemented to print the fields the same as we did for the Contact class.
 5. The `equals` and `hashCode` methods are implemented. They include all the fields just like the Contact class.
+
+### 2.3 The Canonical Constructor
+
+The constructor defined by default takes in all fields as input parameters and sets them to the fields.
+
+E.g., below is the canonical constructor defined behind the scenes:
+
+```java
+public Contact(String name, String email) {
+    this.name = name;
+    this.email = email;
+}
+```
+
+If we define a constructor with the same signature in the record class, it will be used instead of the canonical constructor. More on this in the next section.
 
 ## 3. Working with Records
 
@@ -187,7 +208,7 @@ public record Contact(String name, String email) {
         this("John Doe", email);
     }
 
-    // replaces the default constructor
+    // replaces the canonical constructor
     public Contact(String name, String email) {
         this.name = name;
         this.email = email;
@@ -195,12 +216,12 @@ public record Contact(String name, String email) {
 }
 ```
 
-In the first constructor, the default constructor is accessed using the _this_ keyword.
-The second constructor overrides the default constructor because it has the same parameter list. In this case, the record will not create a default constructor on its own.
+In the first constructor, the canonical constructor is accessed using the _this_ keyword.
+The second constructor overrides the canonical constructor because it has the same parameter list. In this case, the record will not create a default canonical constructor on its own.
 
 There are a few restrictions on the constructors.
 
-**1. The default constructor should always be called from any other constructor.**
+**1. The canonical constructor should always be called from any other constructor.**
 E.g., the below code will not compile:
 
 ```java
@@ -214,9 +235,10 @@ public record Contact(String name, String email) {
 
 This rule ensures that fields are always initialized. It also ensures that the operations defined in the compact constructor are always executed.
 
-**2. Cannot override the default constructor if a compact constructor is defined.**
-When a compact constructor is defined, a default constructor is automatically constructed with the initialization and compact constructor logic.
-In this case, the compiler won't allow us to define a constructor with the same arguments as the default constructor.
+**2. Cannot override the canonical constructor if a compact constructor is defined.**
+When a compact constructor is defined, a canonical constructor is automatically constructed with the initialization and compact constructor logic.
+
+In this case, the compiler won't allow us to define a constructor with the same arguments as the canonical constructor.
 
 E.g., this won't compile:
 

@@ -112,7 +112,7 @@ public class Contact {
 Since most value objects have the same needs and functionality, it was a good idea to make the process of creating them easier.
 Let's look at how Records achieve this.
 
-### 2.2. Converting Person Class to a Record
+### 2.1. Converting Person Class to a Record
 
 Let's create a record of the Contact class which has the same functionality as the Contact class defined above.
 
@@ -127,8 +127,7 @@ For e.g, to create a new instance of the record, we can use the `new` keyword.
 Contact contact = new Contact("John Doe", "johnrocks@gmail.com");
 ```
 
-### 2.3. Default Behaviour
-
+### 2.2. Default Behaviour
 We have reduced the code to a single line. Let's list down what this includes:
 
 1. The _name_ and _email_ fields are private and final by default.

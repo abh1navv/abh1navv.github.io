@@ -4,6 +4,7 @@ date: '2021-11-23'
 tags: ['java', 'architecture', 'design-pattern']
 draft: false
 summary: 'Ways to create Singletons in Java and how to choose the right approach'
+image: '/static/images/article-images/java-records.jpg'
 ---
 
 ![](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/booj7ek286dwl9js87fz.png)

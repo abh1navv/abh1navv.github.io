@@ -4,6 +4,7 @@ date: '2021-07-10'
 tags: ['productivity']
 draft: false
 summary: 'Efficient Learning - The full guide with principles, science and techniques'
+image: '/static/images/article-images/java-records.jpg'
 ---
 
 As individuals who take initiatives to improve our abilities and become a better version of ourselves, our learning can become much more effective and faster if we develop an efficient learning process. Below is a list of principles, scientific studies and techniques which will help us in defining such processes:

@@ -4,6 +4,7 @@ date: '2021-10-04'
 tags: ['java']
 draft: false
 summary: 'Top tools to learn to become a complete Java developer'
+image: '/static/images/article-images/java-records.jpg'
 ---
 
 Once you have enough grasp of Core Java, it is important to go beyond the basics and learn how to solve real problems.

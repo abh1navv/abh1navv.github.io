@@ -4,6 +4,7 @@ date: '2021-06-16'
 tags: ['java', 'design-pattern']
 draft: false
 summary: 'Reduce redundant objects with Flyweight Design pattern'
+image: '/static/images/article-images/java-records.jpg'
 ---
 
 Object creation is the most fundamental operation in OOP. It would be hard to count the number of objects we create(knowingly or behind the scene) even in the most trivial of use cases.

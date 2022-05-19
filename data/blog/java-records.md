@@ -4,7 +4,8 @@ date: '2022-05-15'
 tags: ['java', 'java-14', 'records']
 draft: false
 summary: 'A complete guide to creating value objects using Java Records with code examples'
-images: '/static/images/article-images/java-records.jpg'
+image: '/static/images/article-images/java-records.jpg'
+isTop: true
 ---
 
 ![Java Record banner image](/static/images/article-images/java-records.jpg)

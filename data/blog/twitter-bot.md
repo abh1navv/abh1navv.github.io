@@ -1,7 +1,7 @@
 ---
 title: 'Creating a Twitter bot with JavaScript'
 date: '2021-09-15'
-tags: ['javascript', 'twitter-bot']
+tags: ['javascript', 'js', 'twitter-bot']
 draft: false
 summary: 'Step-by-step guide to creating and hosting your own Twitter bot'
 image: '/static/images/article-images/twitter-bot.png'
@@ -61,7 +61,7 @@ Prerequisite - You need to have a twitter account. You can either use your own a
 
 Once you are done with the process, you will have a [Dashboard](https://developer.twitter.com/en/portal/projects-and-apps) when approved. Generally, approval is instantaneous.
 
-## Creating an App and getting security tokens
+## Creating an App and Getting Security Tokens
 
 1. On the Dashboard, we first need to create a project if we want to use API v2. Click on **Create a project** and give it a name.
 2. Once the project is created, you will find a *Create an app"*button. Click on it to start creating your first app.
@@ -96,7 +96,7 @@ For example,
 1. While searching for tweets, only the app authentication is required, so we will just use the Bearer Token.
 2. While performing a status update, the user authentication is required, so we will use the 4 values mentioned above.
 
-## The development environment
+## The Development Environment
 
 I will host the repo on Github and use Repl as my IDE and my runtime environment.
 
@@ -112,7 +112,7 @@ Get started by doing the below steps
 2. Import the repo in your IDE.
 3. Initialize a new Node project - I use `npm init`. Fill in the required values.
 
-## Twitter-Lite library
+## Twitter-Lite JS library
 
 Although the library is not important and all API calls can be made with generic GET and POST requests, it takes care of all the boilerplate code and authorization headers for you and helps to focus on the app logic.
 

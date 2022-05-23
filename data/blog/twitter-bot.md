@@ -4,6 +4,8 @@ date: '2021-09-15'
 tags: ['javascript', 'twitter-bot']
 draft: false
 summary: 'Step-by-step guide to creating and hosting your own Twitter bot'
+image: '/static/images/article-images/twitter-bot.png'
+isTop: true
 ---
 
 I got back into using Twitter 2 months ago when I started my 100DaysOfCode journey. While posting my progress each day, I got curious about the bots that like and retweet my posts. Finally decided to create my own and experiment with the Twitter APIs.

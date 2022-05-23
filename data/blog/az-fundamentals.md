@@ -4,6 +4,8 @@ date: '2021-06-26'
 tags: ['azure', 'cloud', 'certifications']
 draft: false
 summary: 'Azure Certifications - Where to start and how to prepare? - preparation advice and resources'
+image: '/static/images/article-images/az-fundamentals.gif'
+isTop: true
 ---
 
 In recent years, cloud solutions have been on a boom in the industry. As a result, many of us have been learning and getting certified in cloud solutions.

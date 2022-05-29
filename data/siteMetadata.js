@@ -9,7 +9,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/abh1navv/pw-blog',
   siteLogo: '/static/images/a-logo.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/banner.png',
+  socialBanner: '/static/images/newBanner.png',
   email: 'abhinavpandey312@gmail.com  ',
   github: 'https://github.com/abh1navv',
   twitter: 'https://twitter.com/abh1navv',

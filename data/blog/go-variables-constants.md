@@ -3,8 +3,9 @@ title: 'Variables and Constants in Go'
 date: '2022-08-20'
 tags: ['go', 'golang']
 draft: false
-summary: 'Let's look at the different ways to define variables and constants in Go'
+summary: 'Lets look at the different ways to define variables and constants in Go'
 image: '/static/images/article-images/gopher.jpg'
+isTop: true
 ---
 
 

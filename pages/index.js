@@ -1,5 +1,5 @@
 import Link from '@/components/Link'
-import Posts from '@/components/TopPosts'
+import Posts from '@/components/LatestPosts'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'

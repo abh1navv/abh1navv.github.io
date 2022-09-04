@@ -44,4 +44,26 @@ const Card = ({ title, description, imgSrc, href }) => (
   </div>
 )
 
-export default Card
+const CardList = ({ postsToDisplay }) => {
+  return (
+    <div className="container py-12">
+      <div className="flex flex-wrap -m-4">
+        {!postsToDisplay.length && 'No posts found.'}
+        {postsToDisplay.map((frontMatter) => {
+          const { slug, title, summary, image } = frontMatter
+          return (
+            <Card
+              key={title}
+              title={title}
+              description={summary}
+              imgSrc={image}
+              href={'/blog/' + slug}
+            />
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+export default CardList

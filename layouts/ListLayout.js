@@ -1,9 +1,7 @@
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
-import formatDate from '@/lib/utils/formatDate'
+import ListView from '@/components/List'
+import CardList from '@/components/Card'
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
@@ -11,6 +9,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
+
+  let [layoutStyle] = useState(0)
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
@@ -45,43 +45,20 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
+            <button
+              name="toggle-list-style"
+              onClick={() => (layoutStyle = (layoutStyle + 1) % 2)}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Toggle Style
+            </button>
           </div>
         </div>
-        <ul>
-          {!filteredBlogPosts.length && 'No posts found.'}
-          {displayPosts.map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
-            return (
-              <li key={slug} className="py-4">
-                <article className="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
-                  <dl>
-                    <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date)}</time>
-                    </dd>
-                  </dl>
-                  <div className="space-y-3 xl:col-span-3">
-                    <div>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
-                          {title}
-                        </Link>
-                      </h3>
-                      <div className="flex flex-wrap">
-                        {tags.map((tag) => (
-                          <Tag key={tag} text={tag} />
-                        ))}
-                      </div>
-                    </div>
-                    <div className="prose text-gray-500 max-w-none dark:text-gray-400">
-                      {summary}
-                    </div>
-                  </div>
-                </article>
-              </li>
-            )
-          })}
-        </ul>
+        {layoutStyle === 0 ? (
+          <CardList postsToDisplay={displayPosts} />
+        ) : (
+          <ListView posts={displayPosts} />
+        )}
       </div>
       {pagination && pagination.totalPages > 1 && !searchValue && (
         <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />

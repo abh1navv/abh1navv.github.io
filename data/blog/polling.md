@@ -4,6 +4,7 @@ date: '2021-12-05'
 tags: ['java', 'architecture', 'javascript']
 draft: false
 summary: 'Introduction to Http polling and an implementation example'
+image: '/static/images/article-images/java-records.jpg'
 ---
 
 ## Polling

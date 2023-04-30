@@ -4,6 +4,7 @@ date: '2021-06-20'
 tags: ['git', 'productivity']
 draft: false
 summary: 'Fixing basic mistakes with Git and code fearlessly'
+image: '/static/images/article-images/java-records.jpg'
 ---
 
 One of the prime advantages of a version control system is to be able to code fearlessly and be able to recover from mistakes.

@@ -4,6 +4,7 @@ date: '2021-05-16'
 tags: ['cloud', 'azure']
 draft: false
 summary: 'Learn how to use ARM templates to perform consistent resource deployments on Azure'
+image: '/static/images/article-images/java-records.jpg'
 ---
 
 While working in a cloud-based environment, we are rapidly creating and deploying new resources. Azure provides few different ways to deploy new resources. Let's have a quick look:

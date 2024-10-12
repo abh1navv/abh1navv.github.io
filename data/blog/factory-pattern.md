@@ -3,10 +3,8 @@ title: 'Factory Method Design Pattern in Spring Boot'
 date: '2024-10-12'
 tags: ['java', 'spring-boot', 'design-pattern']
 draft: false
-summary: 'Let's explore the Factory Method pattern and its implementation in a Spring Boot application'
+summary: "Let's explore the Factory Method pattern and its implementation in a Spring Boot application"
 image: '/static/images/factory-pattern.jpg'
-isTop: true
----
 
 
 The Factory Method pattern is a creational design pattern that defines an interface for creating objects, with the specific class being determined by runtime conditions. Essentially, it allows a class to delegate the responsibility of object instantiation to a specialized Factory class, that decides which concrete implementation to create based on runtime conditions or user input.

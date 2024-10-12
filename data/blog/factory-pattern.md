@@ -1,5 +1,5 @@
 ---
-title: Factory Method Design Pattern in Spring Boot
+title: 'Factory Method Design Pattern in Spring Boot'
 date: '2024-10-12'
 tags: ['java', 'spring-boot', 'design-pattern']
 draft: false

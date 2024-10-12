@@ -8,25 +8,28 @@ image: '/static/images/factory-pattern.jpg'
 isTop: true
 ---
 
+
 The Factory Method pattern is a creational design pattern that defines an interface for creating objects, with the specific class being determined by runtime conditions. 
 
 Essentially, it allows a class to delegate the responsibility of object instantiation to a specialized Factory class, that decides which concrete implementation to create based on runtime conditions or user input. This approach promotes loose coupling, enabling our code to be more extendable and maintainable.
 
 In this tutorial, we'll explore the Factory Method pattern and its implementation in a Spring Boot application. 
 
-## 2. Use Cases
+<TOCInline toc={props.toc} asDisclosure='true'/>
+
+## Use Cases
 The Factory Method pattern is useful when:
 
 - **The type of object to create depends on runtime conditions or user input** - This provides flexibility to the application, allowing it to determine the object type dynamically.
 - **We want to encapsulate the instantiation logic within a factory class** - By centralizing object creation in a factory, we avoid duplicating instantiation code across multiple client classes.
 - **We want to adhere to the open/closed principle**: The open/closed principle states that software entities should be open for extension but closed for modification. By using the Factory Method pattern, we can introduce new object types with minimal changes to the existing codebase.
 
-## 3. Implementing Factory Method 
+## Implementing Factory Method 
 To demonstrate the Factory Method pattern, we’ll develop a notification service in Spring Boot that can send various types of notifications (Email, SMS, Push). 
 The service decides the type of notification to send based on the user's preferences. This means, we need to decide the type of notification at runtime, and it may differ for each user.
 
 
-### 3.1. Project Setup
+### Project Setup
 We'll create a Spring Boot project with Maven. To get started, we need to add the following dependencies in the `pom.xml` file:
 
 ```xml
@@ -46,7 +49,7 @@ We'll create a Spring Boot project with Maven. To get started, we need to add th
 The [spring-boot-starter](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter) dependency provides the core functionality of Spring Boot, while the [spring-boot-starter-test](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test) dependency includes testing libraries.
 
 
-### 3.2 Define Notification Interface 
+### Define Notification Interface 
 Next, we define a `Notification` interface that all notification types will implement. This interface will have a single method, `send()` that sends the notification.
 ```java
 public interface Notification {
@@ -54,7 +57,7 @@ public interface Notification {
 }
 ```
 
-### 3.3 Implement Notification Types
+### Implement Notification Types
 We'll create two classes that implement the `Notification` interface: `EmailNotification`, and `PushNotification`. Each class provides a specific implementation for sending the corresponding type of notification.
 
 The `EmailNotification` class implements the `Notification` interface and provides a specific implementation for sending email notifications. The `@Service` annotation registers this class as a Spring Bean, enabling Spring to manage its lifecycle.
@@ -81,7 +84,7 @@ public class SMSNotification implements Notification {
 }
 ```
 
-### 3.4. Implement the Factory Method
+### Implement the Factory Method
 Next, let's create a class called `NotificationFactory` that will be responsible for creating instances of the appropriate notification type based on the input. This class will use Spring's dependency injection to inject the notification beans and return the correct one based on the input type.
 
 ```java
@@ -113,7 +116,7 @@ Let's look at the key points in the `NotificationFactory` class:
 
 By using dependency injection, the `NotificationFactory` class is decoupled from the concrete notification classes, promoting flexibility and maintainability. At the same time, this reduces the number of objects being created as Spring manages the lifecycle of the notification beans.
 
-### 3.5. Using the Factory Method
+### Using the Factory Method
 Finally, let's create a `NotificationService` class that uses the `NotificationFactory` to send notifications. The `NotificationService` class will have a `sendNotification()` method that takes the notification type as input and sends the appropriate notification.
 
 ```java
@@ -138,7 +141,7 @@ It is important to note that the `NotificationService` class is not aware of the
 
 
 
-### 4. Testing
+### Testing
 Finally, let’s add unit tests to verify the behavior of `NotificationService`. These tests ensure that the service behaves as expected and that the correct notification type is created and sent.
 
 ```java
@@ -170,7 +173,7 @@ Here are the key points in the `NotificationServiceTest` class:
 - `Mockito.verify()`: Verifies that the `send()` method is called on the correct notification type. This ensures that the correct notification type is created and sent.
 - **Exception Test**: Ensures that passing an invalid type throws an `IllegalArgumentException`, confirming robust error handling.
 
-## 5. Adding a New Notification Type
+## Adding a New Notification Type
 One of the key benefits of the Factory Method pattern is its extensibility. Let's say we want to add a new notification type, `PushNotification`. To do this, we need to create a new class that implements the `Notification` interface and provide a specific implementation for sending push notifications.
 
 ```java
@@ -202,8 +205,9 @@ public Notification createNotification(String type) {
 
 As we can see, adding a new notification type is straightforward. We create a new class that implements the `Notification` interface, update the `NotificationFactory` to include the new type, and we're done. This demonstrates the flexibility and extensibility of the Factory Method pattern.
 
-## 6. Conclusion
-In this tutorial, we explored the Factory Method design pattern and its implementation in a Spring Boot application. We developed a notification service that uses the Factory Method pattern to create different types of notifications based on user preferences. By delegating the responsibility of object creation to subclasses, we achieved loose coupling, maintainability, and extensibility in our codebase.
-Furthermore, we demonstrated how to add a new notification type to the system with minimal changes. 
+## Conclusion
+In this tutorial, we explored the Factory Method design pattern and its implementation in a Spring Boot application. We developed a notification service that uses the Factory Method pattern to create different types of notifications based on user preferences. Furthermore, we demonstrated how to add a new notification type to the system with minimal changes. 
+
+By delegating the responsibility of object creation to the factory class, we achieved loose coupling, maintainability, and extensibility in our codebase.
 
 This pattern is particularly useful when the type of object to create depends on runtime conditions or user input, enabling dynamic object creation and promoting code reusability.

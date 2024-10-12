@@ -24,10 +24,9 @@ The Factory Method pattern is useful when:
 - **We want to encapsulate the instantiation logic within a factory class** - By centralizing object creation in a factory, we avoid duplicating instantiation code across multiple client classes.
 - **We want to adhere to the open/closed principle**: The open/closed principle states that software entities should be open for extension but closed for modification. By using the Factory Method pattern, we can introduce new object types with minimal changes to the existing codebase.
 
-## Implementing Factory Method 
+## Implementing the Factory Method Pattern
 To demonstrate the Factory Method pattern, we’ll develop a notification service in Spring Boot that can send various types of notifications (Email, SMS, Push). 
 The service decides the type of notification to send based on the user's preferences. This means, we need to decide the type of notification at runtime, and it may differ for each user.
-
 
 ### Project Setup
 We'll create a Spring Boot project with Maven. To get started, we need to add the following dependencies in the `pom.xml` file:
@@ -49,7 +48,7 @@ We'll create a Spring Boot project with Maven. To get started, we need to add th
 The [spring-boot-starter](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter) dependency provides the core functionality of Spring Boot, while the [spring-boot-starter-test](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test) dependency includes testing libraries.
 
 
-### Define Notification Interface 
+### The Interface 
 Next, we define a `Notification` interface that all notification types will implement. This interface will have a single method, `send()` that sends the notification.
 ```java
 public interface Notification {
@@ -57,7 +56,7 @@ public interface Notification {
 }
 ```
 
-### Implement Notification Types
+### Implementations
 We'll create two classes that implement the `Notification` interface: `EmailNotification`, and `PushNotification`. Each class provides a specific implementation for sending the corresponding type of notification.
 
 The `EmailNotification` class implements the `Notification` interface and provides a specific implementation for sending email notifications. The `@Service` annotation registers this class as a Spring Bean, enabling Spring to manage its lifecycle.
@@ -84,7 +83,7 @@ public class SMSNotification implements Notification {
 }
 ```
 
-### Implement the Factory Method
+### The Factory Method
 Next, let's create a class called `NotificationFactory` that will be responsible for creating instances of the appropriate notification type based on the input. This class will use Spring's dependency injection to inject the notification beans and return the correct one based on the input type.
 
 ```java
@@ -141,7 +140,7 @@ It is important to note that the `NotificationService` class is not aware of the
 
 
 
-### Testing
+## Testing
 Finally, let’s add unit tests to verify the behavior of `NotificationService`. These tests ensure that the service behaves as expected and that the correct notification type is created and sent.
 
 ```java
@@ -171,7 +170,6 @@ Here are the key points in the `NotificationServiceTest` class:
 - `@SpringBootTest`: This annotation loads the full application context for integration testing. It ensures that all the beans are loaded and available for testing.
 - `@MockBean`: Mocks the notification beans, ensuring isolated tests without requiring actual implementations. This allows us to test the service in isolation.
 - `Mockito.verify()`: Verifies that the `send()` method is called on the correct notification type. This ensures that the correct notification type is created and sent.
-- **Exception Test**: Ensures that passing an invalid type throws an `IllegalArgumentException`, confirming robust error handling.
 
 ## Adding a New Notification Type
 One of the key benefits of the Factory Method pattern is its extensibility. Let's say we want to add a new notification type, `PushNotification`. To do this, we need to create a new class that implements the `Notification` interface and provide a specific implementation for sending push notifications.
